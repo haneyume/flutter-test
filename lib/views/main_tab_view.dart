@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'main_tabs/home_view.dart';
 import 'main_tabs/explore_view.dart';
 import 'main_tabs/new_view.dart';
-import 'main_tabs/shop_view.dart';
+import 'main_tabs/chat_view.dart';
 import 'main_tabs/me_view.dart';
 
 class MainTabView extends StatefulWidget {
@@ -20,7 +20,7 @@ class _MainTabViewState extends State<MainTabView> {
     const HomeView(),
     const ExploreView(),
     const NewView(),
-    const ShopView(),
+    const ChatView(),
     const MeView()
   ];
 
@@ -49,8 +49,8 @@ class _MainTabViewState extends State<MainTabView> {
             label: 'New',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag_outlined),
-            label: 'Shop',
+            icon: Icon(Icons.chat_bubble_outline),
+            label: 'Chat',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),

@@ -1,8 +1,5 @@
-import 'dart:async';
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -12,26 +9,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  List data = [];
-
-  Future<void> getData() async {
-    var url = Uri.https("jsonplaceholder.typicode.com", "/posts",
-        {"_limit": "30", "_expand": "user"});
-    var response = await http.get(url);
-
-    if (response.statusCode == 200) {
-      setState(() {
-        data = json.decode(response.body);
-      });
-    }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-
-    getData();
-  }
+  final _future = Supabase.instance.client.from('posts').select();
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +27,24 @@ class _HomeViewState extends State<HomeView> {
           ),
         ],
       ),
-      body: ListView.builder(
-        itemCount: data.length,
-        itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            title: Text(data[index]["title"]),
-            subtitle: Text(data[index]["body"]),
+      body: FutureBuilder<List<Map<String, dynamic>>>(
+        future: _future,
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          final data = snapshot.data!;
+
+          return ListView.builder(
+            itemCount: data.length,
+            itemBuilder: ((context, index) {
+              final item = data[index];
+
+              return ListTile(
+                title: Text(item['like_count'].toString()),
+              );
+            }),
           );
         },
       ),

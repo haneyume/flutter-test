@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SettingsView extends StatefulWidget {
   const SettingsView({super.key});
@@ -14,21 +15,27 @@ class _SettingsViewState extends State<SettingsView> {
         appBar: AppBar(
           title: const Text('Settings'),
         ),
-        body: ListView(children: const <Widget>[
-          ListTile(
+        body: ListView(children: <Widget>[
+          const ListTile(
+            title: Text('測試標題一'),
+            subtitle: Text('測試內容一'),
+            leading: Icon(Icons.event_seat),
+          ),
+          const ListTile(
+            title: Text('測試標題一'),
+            subtitle: Text('測試內容一'),
+            leading: Icon(Icons.event_seat),
+          ),
+          const ListTile(
             title: Text('測試標題一'),
             subtitle: Text('測試內容一'),
             leading: Icon(Icons.event_seat),
           ),
           ListTile(
-            title: Text('測試標題一'),
-            subtitle: Text('測試內容一'),
-            leading: Icon(Icons.event_seat),
-          ),
-          ListTile(
-            title: Text('測試標題一'),
-            subtitle: Text('測試內容一'),
-            leading: Icon(Icons.event_seat),
+            title: const Text('Logout'),
+            onTap: () async {
+              await Supabase.instance.client.auth.signOut();
+            },
           ),
         ]));
   }
