@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
 
 class DragDropPage extends StatefulWidget {
-  const DragDropPage({Key? key}) : super(key: key);
+  const DragDropPage({super.key});
 
   @override
-  DragDropPageState createState() => DragDropPageState();
+  State<DragDropPage> createState() => _DragDropPageState();
 }
 
-class DragDropPageState extends State<DragDropPage> {
+class _DragDropPageState extends State<DragDropPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        const Text('Drag & Drop'),
+        Text('Drag & Drop'),
         SizedBox(height: 20),
-        const MyDraggable(),
+        MyDraggable(),
         SizedBox(height: 10),
-        const MyDragTarget(),
+        MyDragTarget(),
       ],
     );
   }
 }
 
 class MyDraggable extends StatelessWidget {
-  const MyDraggable({Key? key}) : super(key: key);
+  const MyDraggable({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,7 @@ class MyDraggable extends StatelessWidget {
 }
 
 class MyDragTarget extends StatefulWidget {
-  const MyDragTarget({Key? key}) : super(key: key);
+  const MyDragTarget({super.key});
 
   @override
   MyDragTargetState createState() => MyDragTargetState();

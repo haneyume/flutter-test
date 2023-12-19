@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SettingView extends StatefulWidget {
-  const SettingView({Key? key}) : super(key: key);
+class SettingsView extends StatefulWidget {
+  const SettingsView({super.key});
 
   @override
-  _State createState() => _State();
+  State<SettingsView> createState() => _SettingsViewState();
 }
 
-class _State extends State<SettingView> {
+class _SettingsViewState extends State<SettingsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -4,14 +4,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class HttpRequestView extends StatefulWidget {
+  const HttpRequestView({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<HttpRequestView> createState() => _HttpRequestViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _HttpRequestViewState extends State<HttpRequestView> {
   List data = [];
 
   Future<void> getData() async {
@@ -37,7 +37,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text('HttpRequest'),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.favorite_border),

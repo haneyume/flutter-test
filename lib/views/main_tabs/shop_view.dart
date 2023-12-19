@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ShopView extends StatefulWidget {
-  const ShopView({Key? key}) : super(key: key);
+  const ShopView({super.key});
 
   @override
-  _State createState() => _State();
+  State<ShopView> createState() => _ShopViewState();
 }
 
-class _State extends State<ShopView> {
+class _ShopViewState extends State<ShopView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

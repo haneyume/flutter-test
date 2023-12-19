@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
 class CanvasPage extends StatefulWidget {
-  const CanvasPage({Key? key}) : super(key: key);
+  const CanvasPage({super.key});
 
   @override
-  CanvasPageState createState() => CanvasPageState();
+  State<CanvasPage> createState() => _CanvasPageState();
 }
 
-class CanvasPageState extends State<CanvasPage> {
+class _CanvasPageState extends State<CanvasPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        const Text('Drag & Drop'),
+        Text('Drag & Drop'),
       ],
     );
   }

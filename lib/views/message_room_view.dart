@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class MessageRoomView extends StatefulWidget {
-  const MessageRoomView({Key? key}) : super(key: key);
+  const MessageRoomView({super.key});
 
   @override
-  _State createState() => _State();
+  State<MessageRoomView> createState() => _MessageRoomViewState();
 }
 
-class _State extends State<MessageRoomView> {
+class _MessageRoomViewState extends State<MessageRoomView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

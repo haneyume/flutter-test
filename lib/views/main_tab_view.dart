@@ -7,13 +7,13 @@ import 'main_tabs/shop_view.dart';
 import 'main_tabs/me_view.dart';
 
 class MainTabView extends StatefulWidget {
-  const MainTabView({Key? key}) : super(key: key);
+  const MainTabView({super.key});
 
   @override
-  _State createState() => _State();
+  State<MainTabView> createState() => _MainTabViewState();
 }
 
-class _State extends State<MainTabView> {
+class _MainTabViewState extends State<MainTabView> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [

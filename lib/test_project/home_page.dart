@@ -5,13 +5,13 @@ import 'canvas_page.dart';
 import 'code_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
-  HomePageState createState() => HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return SelectionArea(

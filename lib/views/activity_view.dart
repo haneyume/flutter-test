@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ActivityView extends StatefulWidget {
-  const ActivityView({Key? key}) : super(key: key);
+  const ActivityView({super.key});
 
   @override
-  _State createState() => _State();
+  State<ActivityView> createState() => _ActivityViewState();
 }
 
-class _State extends State<ActivityView> {
+class _ActivityViewState extends State<ActivityView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
