@@ -36,14 +36,26 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
 
+  # dart.dev
   http: ^1.1.2
+
+  # flutter.dev
   shared_preferences: ^2.2.2
   url_launcher: ^6.2.2
-  provider: ^6.1.1
   image_picker: ^1.0.5
+  rfw: ^1.0.15
+  flutter_markdown: ^0.6.18+2
+
+  # dnfield.dev
   flutter_svg: ^2.0.9
+
+  # dash-overflow.net
+  provider: ^6.1.1
+
+  # supabase.io
+  supabase_flutter: ^2.0.2
+
   flutter_dotenv: ^5.1.0
-  supabase_flutter: ^2.0.1
 
 dev_dependencies:
   flutter_test:
