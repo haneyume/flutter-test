@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class UserView extends StatefulWidget {
-  final String userId;
+class StoryView extends StatefulWidget {
+  final String postId;
 
-  const UserView({super.key, required this.userId}) : super();
+  const StoryView({super.key, required this.postId}) : super();
 
   @override
-  State<UserView> createState() => _UserViewState();
+  State<StoryView> createState() => _StoryViewState();
 }
 
-class _UserViewState extends State<UserView> {
+class _StoryViewState extends State<StoryView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

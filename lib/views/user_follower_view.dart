@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class UserView extends StatefulWidget {
+class UserFollowerView extends StatefulWidget {
   final String userId;
 
-  const UserView({super.key, required this.userId}) : super();
+  const UserFollowerView({super.key, required this.userId}) : super();
 
   @override
-  State<UserView> createState() => _UserViewState();
+  State<UserFollowerView> createState() => _UserFollowerViewState();
 }
 
-class _UserViewState extends State<UserView> {
+class _UserFollowerViewState extends State<UserFollowerView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -3,9 +3,16 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'views/login_screen.dart';
 import 'views/main_tab_view.dart';
+
 import 'views/settings_view.dart';
-import 'views/message_room_view.dart';
 import 'views/camera_view.dart';
+
+import 'views/user_view.dart';
+import 'views/user_follower_view.dart';
+import 'views/user_following_view.dart';
+
+import 'views/post_view.dart';
+import 'views/post_like_view.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -36,37 +43,35 @@ class MyAppState extends State<MyApp> {
       home: const AppContent(),
       routes: <String, WidgetBuilder>{
         '/settings': (_) => const SettingsView(),
-        '/message_room': (_) => const MessageRoomView(),
         '/camera': (_) => const CameraView(),
       },
       onGenerateRoute: (settings) {
         final args = settings.arguments as Map<String, dynamic>;
 
-        if (settings.name == '/post') {
-          return MaterialPageRoute(
-            builder: (_) => Scaffold(
-              appBar: AppBar(
-                title: Text(args['title'].toString()),
-              ),
-              body: Center(
-                child: Text(args['content'].toString()),
-              ),
-            ),
-          );
-        } else if (settings.name == '/user') {
-          return MaterialPageRoute(
-            builder: (_) => Scaffold(
-              appBar: AppBar(
-                title: Text(args['title'].toString()),
-              ),
-              body: Center(
-                child: Text(args['content'].toString()),
-              ),
-            ),
-          );
-        } else {
-          return null;
+        switch (settings.name) {
+          case '/user':
+            return MaterialPageRoute(
+              builder: (_) => UserView(userId: args['userId']),
+            );
+          case '/user_follower':
+            return MaterialPageRoute(
+              builder: (_) => UserFollowerView(userId: args['userId']),
+            );
+          case '/user_following':
+            return MaterialPageRoute(
+              builder: (_) => UserFollowingView(userId: args['userId']),
+            );
+          case '/post':
+            return MaterialPageRoute(
+              builder: (_) => PostView(postId: args['postId']),
+            );
+          case '/post_like':
+            return MaterialPageRoute(
+              builder: (_) => PostLikeView(postId: args['postId']),
+            );
         }
+
+        return null;
       },
     );
   }
